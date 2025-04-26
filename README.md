@@ -100,8 +100,4 @@ Assistant: ...
 
 ## Contribuição
 
-Contribuições são bem-vindas! Abra issues ou pull requests para melhorias, correções ou novas funcionalidades.
-
-## Licença
-
-Este projeto não possui uma licença definida. Para adicionar uma, crie um arquivo `LICENSE` na raiz do projeto (por exemplo, com a MIT License).
+Contribuições são bem-vindas. Abra issues ou pull requests para melhorias, correções ou novas funcionalidades.
