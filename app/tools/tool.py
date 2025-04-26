@@ -8,7 +8,7 @@ class Tool:
         self, name: str, description: str, input_schema: dict[str, Any]
     ) -> None:
         """Initialize Tool.
-        
+
         Args:
             name: Tool name.
             description: Tool description.

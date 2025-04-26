@@ -1,8 +1,9 @@
 import logging
-from typing import List, Dict
+from typing import Dict, List
 
-from openai import OpenAI
 import openai
+from openai import OpenAI
+
 
 class LLMClient:
     """Manages communication with the LLM provider."""

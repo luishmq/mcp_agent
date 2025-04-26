@@ -8,12 +8,13 @@ from app.config.config import Configuration
 from app.llm.client import LLMClient
 from app.server.server import Server
 
-
 logger = logging.getLogger(__name__)
 logging.basicConfig(
-    level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s", handlers=[
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s",
+    handlers=[
         logging.StreamHandler(),
-    ]
+    ],
 )
 
 

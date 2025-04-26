@@ -11,7 +11,7 @@ class ChatSession:
 
     def __init__(self, servers: List[Server], llm_client: LLMClient) -> None:
         """Initialize chat session.
-        
+
         Args:
             servers: List of MCP servers.
             llm_client: LLM client.

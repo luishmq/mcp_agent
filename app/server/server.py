@@ -16,7 +16,7 @@ class Server:
 
     def __init__(self, name: str, config: dict[str, Any]) -> None:
         """Initialize MCP server.
-        
+
         Args:
             name: Server name.
             config: Server configuration dictionary.
@@ -30,7 +30,7 @@ class Server:
 
     async def initialize(self) -> None:
         """Initialize the server connection.
-        
+
         Raises:
             ValueError: If command is None.
             Exception: If initialization fails.
