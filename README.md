@@ -101,7 +101,3 @@ Assistant: ...
 ## Contributing
 
 Contributions are welcome! Open issues or pull requests for improvements, bug fixes, or new features.
-
-## License
-
-This project has no license defined. To add one, create a `LICENSE` file in the project root (e.g., the MIT License).
