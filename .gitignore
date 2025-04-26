@@ -1,0 +1,30 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.env
+servers_config.json
+uv.lock
+
+# Byte-compiled / optimized / DLL files
+.Python
+*.so
+
+# Distribution / packaging
+build/
+dist/
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+.pytest_cache/
+.coverage
+coverage.xml
+
+# IDE / Editor directories
+.idea/
+.vscode/
+*.swp
