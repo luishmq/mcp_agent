@@ -1,17 +1,17 @@
 # MCP Chatbot CLI
 
-Este projeto fornece um cliente de linha de comando (CLI) de chatbot que integra modelos de linguagem (LLMs) da OpenAI com servidores MCP (Model Context Protocol) para execução de ferramentas especializadas.
+This project provides a command-line chatbot client (CLI) that integrates OpenAI language models (LLMs) with MCP (Model Context Protocol) servers for specialized tool execution.
 
-## Funcionalidades
+## Features
 
-- Inicializa e gerencia múltiplos servidores MCP (ex.: Puppeteer, GitHub, FileSystem).
-- Descobre e apresenta as ferramentas disponíveis de cada servidor ao LLM.
-- Gera prompts dinâmicos para o LLM, orientando-o a usar ferramentas quando necessário.
-- Processa respostas do LLM, executa ferramentas via MCP e retorna resultados ao usuário.
-- Mecanismo de retry para chamadas de ferramenta.
-- Limpeza adequada de recursos ao encerrar a sessão.
+- Initialize and manage multiple MCP servers (e.g., Puppeteer, GitHub, FileSystem).
+- Discover and present available tools from each server to the LLM.
+- Generate dynamic prompts guiding the LLM to use tools when necessary.
+- Process LLM responses, execute tools via MCP, and return results to the user.
+- Retry mechanism for tool calls.
+- Proper resource cleanup when ending the session.
 
-## Tecnologias e Dependências
+## Technologies & Dependencies
 
 - Python 3.12+
 - [OpenAI Python SDK](https://github.com/openai/openai-python)
@@ -19,25 +19,25 @@ Este projeto fornece um cliente de linha de comando (CLI) de chatbot que integra
 - [python-dotenv](https://pypi.org/project/python-dotenv/)
 - [ruff](https://github.com/charliermarsh/ruff) (linting)
 
-As dependências estão definidas no `pyproject.toml`. Para instalar:
+Dependencies are defined in `pyproject.toml`. To install:
 
 ```bash
-python --version  # deve ser >= 3.12
+python --version  # should be >= 3.12
 python -m venv .venv
 source .venv/bin/activate
 pip install --upgrade pip
 pip install .
 ```
 
-## Configuração
+## Configuration
 
-1. Crie um arquivo `.env` na raiz do projeto com sua chave da OpenAI:
+1. Create a `.env` file at the project root with your OpenAI API key:
 
    ```bash
    echo "OPENAI_API_KEY=your_openai_api_key_here" > .env
    ```
 
-2. Defina o(s) servidor(es) MCP em `servers_config.json`. Exemplo:
+2. Define the MCP server(s) in `servers_config.json`. Example:
 
    ```json
    {
@@ -63,41 +63,45 @@ pip install .
    }
    ```
 
-> **⚠️ Atenção**: Nunca comite tokens ou credenciais sensíveis no repositório. Considere adicionar `servers_config.json` ao `.gitignore` e manter um modelo de configuração (`servers_config.example.json`).
+> ⚠️ Do not commit tokens or sensitive credentials to the repository. Consider adding `servers_config.json` to `.gitignore` and maintaining a sample file (`servers_config.example.json`).
 
-## Como usar
+## Usage
 
 ```bash
 python main.py
 ```
 
-O chatbot iniciará uma sessão interativa:
+The chatbot will start an interactive session:
 
 ```
-You: Qual é o status da minha cópia do repositório?
+You: What is the status of my repository checkout?
 Assistant: ...
 ```
 
-- Digite sua pergunta ou comando.
-- Para sair, digite `exit` ou `quit`.
+- Type your question or command.
+- To exit, type `exit` or `quit`.
 
-## Estrutura do Projeto
+## Project Structure
 
 ```
 .
 ├── app/
-│   ├── chat/           # Orquestra a sessão de chat e lógica de fluxo
-│   ├── config/         # Carrega configurações e variáveis de ambiente
-│   ├── llm/            # Cliente para comunicação com o LLM (OpenAI)
-│   ├── server/         # Gerencia conexões e execução de ferramentas MCP
-│   └── tools/          # Representação e formatação de ferramentas
-├── main.py             # Ponto de entrada da aplicação
-├── servers_config.json # Configuração dos servidores MCP
-├── pyproject.toml      # Metadados e dependências do projeto
-├── .gitignore          # Arquivos e pastas ignorados pelo Git
-└── README.md           # Documentação do projeto
+│   ├── chat/           # Orchestrates the chat session and flow logic
+│   ├── config/         # Loads configuration and environment variables
+│   ├── llm/            # Client for LLM (OpenAI) communication
+│   ├── server/         # Manages MCP server connections and tool execution
+│   └── tools/          # Tool representation and formatting
+├── main.py             # Application entrypoint
+├── servers_config.json # MCP servers configuration
+├── pyproject.toml      # Project metadata and dependencies
+├── .gitignore          # Files and folders ignored by Git
+└── README.md           # Project documentation
 ```
 
-## Contribuição
+## Contributing
 
-Contribuições são bem-vindas. Abra issues ou pull requests para melhorias, correções ou novas funcionalidades.
+Contributions are welcome! Open issues or pull requests for improvements, bug fixes, or new features.
+
+## License
+
+This project has no license defined. To add one, create a `LICENSE` file in the project root (e.g., the MIT License).
